@@ -33,6 +33,7 @@
 \RequirePackage[export]{adjustbox}
 \RequirePackage{emptypage}
 \RequirePackage{enumitem}
+\RequirePackage[toc]{appendix}
 % Open Sans font is easier to read
 \RequirePackage[default,oldstyle]{opensans}
 
