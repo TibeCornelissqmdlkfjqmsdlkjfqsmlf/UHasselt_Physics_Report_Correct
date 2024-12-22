@@ -1,26 +1,26 @@
 \documentclass[oneside, twocolumn]{uhphysreport} 
-% Gebruik de 'twoside" optie inplaats van "oneside" bij het afdrukken
-% Provide an option that defines \titlepage graphics
-\usepackage{lipsum} % just for the demo, may be removed
-% \usepackage{showframe} % just for the demo, may be removed
 
-% Title
-\title{Title (bold)}
-\course{Experimentele Technieken}
+\usepackage{lipsum} 
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float} % For forcing table placement
+
+\DeclareMathOperator{\sinc}{sinc}
+
+
+
+\title{Grating spectrometer}
+\course{Experimental Techniques}
 \acyear{2023 - 2024}
-\major{$\mathit{2^{e}}$ bachelor FYS}
+\major{$\mathit{1^{e}}$ bachelor FYS}
 \date{\today}
 
-% Authors and affiliations
-\author{Student Name (2100001) \\ Student Name (2100002)} % First author
-% \mentor en \promotor commands are optional, only use if necessary/desired
-%\mentor{Mentor Name} 
-%\promotor{Prof. Dr. Promotor J.} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       START DOCUMENT       %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Tibe Cornelis (2470582) \\ Thomas Reynders (2467872)}
 \begin{document}
+
 \maketitle
 
 \thispagestyle{fancy}
@@ -36,6 +36,7 @@
 \input{Sections/4-Resultaten}
 \input{Sections/5-Besluit}
 \input{Sections/6-Erkenning}
+\input{Sections/7-Appendix}
 
 \vspace{0.5cm}
 \printbibliography[heading=bibintoc,title={Literatuur}]

@@ -1,0 +1,109 @@
+
+
+\section*{Appendix: Fourier Transform of the Rectangular Window Function}
+
+\begin{equation}
+\text{rect}(a) = 
+\begin{cases}
+1 & \text{if } |a| \leq \frac{1}{2}, \\
+0 & \text{otherwise.}
+\end{cases}
+\end{equation}
+
+\begin{equation}
+F(\omega) = \int_{-\infty}^{\infty} f(t)\, e^{-i \omega t} \, dt.
+\end{equation}
+
+Since \( f(t) = 0 \) outside the interval \(\bigl[-\tfrac{\tau}{2}, \tfrac{\tau}{2}\bigr]\), the integral reduces to:
+\begin{equation}
+F(\omega) 
+= \int_{-\frac{\tau}{2}}^{\frac{\tau}{2}} e^{-i \omega t} \, dt.
+\end{equation}
+
+Evaluating this integral gives:
+\begin{equation}
+F(\omega) 
+= \left[ \frac{e^{-i \omega t}}{-i \omega} \right]_{-\frac{\tau}{2}}^{\frac{\tau}{2}}
+= \frac{1}{-\,i\,\omega} 
+\left( e^{-\,i\,\omega \,\frac{\tau}{2}} \;-\; e^{i\,\omega \,\frac{\tau}{2}} \right).
+\end{equation}
+
+Using 
+\(\sin(\alpha) = \tfrac{1}{2i}\bigl(e^{i\alpha} - e^{-\,i\alpha}\bigr)\), it follows that:
+\begin{equation}
+F(\omega) 
+= \frac{2}{\omega} \,\sin\!\Bigl(\tfrac{\omega \,\tau}{2}\Bigr).
+\end{equation}
+
+Expressing this in terms of the \(\mathrm{sinc}\) function yields:
+\begin{equation}
+F(\omega) 
+= \tau \,\mathrm{sinc}\Bigl(\tfrac{\omega\,\tau}{2\pi}\Bigr),
+\quad \text{where } 
+\mathrm{sinc}(x) = \frac{\sin(\pi x)}{\pi x}.
+\end{equation}
+
+\section*{Appendix: Fourier Transform of the Dirac Comb}
+
+Consider the function (sometimes referred to as the "comb function"):
+\begin{equation}
+f(x) = \sum_{n=-\infty}^{\infty} \delta\bigl(x - n\,d\bigr),
+\end{equation}
+where \(d\) is the distance between consecutive \(\delta\)-pulses.
+
+The Fourier transform \(F(\omega)\) of a function \(f(x)\) is defined by:
+\begin{equation}
+F(\omega) 
+= \int_{-\infty}^{\infty} f(x)\, e^{-\,i\,\omega\,x}\,dx.
+\end{equation}
+
+Substitute \(f(x)\) into the definition:
+\begin{equation}
+F(\omega)
+= \int_{-\infty}^{\infty} 
+\left(\sum_{n=-\infty}^{\infty} \delta\bigl(x - n\,d\bigr)\right) 
+e^{-\,i\,\omega\,x} \, dx.
+\end{equation}
+Under suitable conditions, the sum and the integral may be interchanged:
+\begin{equation}
+F(\omega)
+= \sum_{n=-\infty}^{\infty} 
+\int_{-\infty}^{\infty} \delta\bigl(x - n\,d\bigr)\, e^{-\,i\,\omega\,x}\, dx.
+\end{equation}
+
+The sifting property of the Dirac delta implies:
+\[
+\int_{-\infty}^{\infty} \delta\bigl(x - a\bigr)\, g(x)\,dx 
+= g(a).
+\]
+By setting \( a = n\,d \):
+\begin{equation}
+F(\omega)
+= \sum_{n=-\infty}^{\infty} e^{-\,i\,\omega\,n\,d}.
+\end{equation}
+
+The expression
+\(\sum_{n=-\infty}^{\infty} e^{-\,i\,\omega\,n\,d}\)
+is an infinite exponential series and can be rewritten as follows:
+\begin{equation}
+\sum_{n=-\infty}^{\infty} e^{-\,i\,\omega\,n\,d}
+= \frac{2\pi}{d} 
+\sum_{k=-\infty}^{\infty} 
+\delta\!\Bigl(\omega - \tfrac{2\pi k}{d}\Bigr).
+\end{equation}
+
+Hence, the Fourier transform of the Dirac comb is:
+\begin{equation}
+F(\omega)
+= 
+\frac{2\pi}{d}
+\sum_{k=-\infty}^{\infty} 
+\delta\!\Bigl(\omega - \tfrac{2\pi k}{d}\Bigr).
+\end{equation}
+
+In summary,
+\[
+\mathcal{F}\Bigl\{\sum_{n=-\infty}^{\infty} \delta(x - n\,d)\Bigr\}
+= 
+\frac{2\pi}{d} \sum_{k=-\infty}^{\infty} \delta\!\Bigl(\omega - \tfrac{2\pi k}{d}\Bigr).
+\]

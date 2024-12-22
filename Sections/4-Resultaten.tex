@@ -1,19 +1,123 @@
-\section{Resultaten en discussie}
-% Edit below
-Je vermeldt de resultaten van de metingen, bijvoorbeeld de gemeten waarde van de gevraagde of
-gezochte grootheid met zijn onnauwkeurigheid of een grafiek die uit de meting volgt. 
-Details van
-de meetresultaten staan in het appendix. 
-Niet alle grafieken hoeven in het verslag. 
-Grote series van dezelfde grafieken horen in het appendix met één typisch voorbeeld in het verslag. Over het algemeen zal men kiezen voor de presentatie van de meetresultaten in de vorm van een grafiek maar in sommige gevallen is een tabel een betere vorm. 
-Men kan kiezen voor presentatie in een tabel in het geval van een meting waarbij slechts een heel klein aantal meetpunten is verkregen.
-Indien de resultaten in een grafiek gepresenteerd worden dan presenteer je ze niet nogmaals in
-een tabel, ook niet in een appendix.
-De metingen en de resultaten moeten kritisch bekeken worden. 
-Heeft men de waarde van een bepaalde grootheid meer dan één maal bepaald, dan worden de gevonden waarden en hun onnauwkeurigheden onderling vergeleken. 
-Waar mogelijk worden de waarden ook vergeleken met literatuurwaarden (met bronvermelding!), of met waarden die door je model worden voorspeld. 
-Indien je een afwijkend resultaat vindt dan behoor je een discussie te geven waarom je dit afwijkende resultaat vindt. 
-(De gevolgde meetmethode eventueel kritisch bekijken.) 
-Probeer zo concreet en objectief mogelijk te blijven bij deze kritische beschouwing. 
-Getallen zeggen in deze meer dan vage woorden. 
-Je kunt suggesties geven hoe je beter kunt meten of wat een interessant vervolgexperiment zou kunnen zijn.
+\clearpage
+\section{Results}
+    \subsection{Transfer function}
+        \subsubsection{For an infinitely wide grating with infinitely narrow \texorpdfstring{$\delta$}{Lg} slits.}
+            
+            \begin{equation}
+                \mathcal{F}[f(x)] = \sum_{n=-\infty}^{\infty} \delta(\omega - 2n\frac{\pi}{d})
+            \end{equation}
+
+        \subsubsection{For a finite wide grating with infinitely narrow \texorpdfstring{$\delta$}{Lg} slits.}
+            
+            \begin{equation}
+                \mathcal{F}[f(x)] = \mathcal{F}[Rect(\frac{x}{b})\cdot
+                \sum_{n=-\infty}^{\infty} \delta(x-nd)]
+            \end{equation}
+            
+            \begin{equation}
+                \mathcal{F}[f(x)] = b \cdot \sinc{ \frac{\omega \cdot b}{2}} * \sum_{n=-\infty}^{\infty} \delta(\omega - 2n\frac{\pi}{d}) 
+            \end{equation}
+            
+        \subsubsection{For a finitely wide grating with a slit of width b}
+        
+            \begin{equation}
+                \mathcal{F}[f(x)] = b \cdot \sinc\left(\frac{\omega b}{2}\right)   \cdot [ \sinc\left(\frac{\omega W}{2}\right) * \sum_{n=-\infty}^{\infty} \delta(\omega - 2n\frac{\pi}{d}) ] 
+            \end{equation}
+            
+   \subsection{Amount of Slits per mm}
+
+        The width of each slit is denoted by \( d \):
+        
+        \begin{equation}
+            d = 1.67 \cdot 10^{-6} \, m
+            \label{eq:WidthSlit}
+        \end{equation}
+        
+        The approximate number of slits per millimeter is:
+
+        \begin{equation}
+            N \approx 599
+            \label{eq:SlitCount}
+        \end{equation}
+        
+    \subsection{Wave length emission lines}
+        \subsubsection{Measured angles}
+            \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.3}
+                \begin{tabular}{l|c}
+                    \textbf{Color} & \textbf{Measured Angle (°)} \\
+                    \hline
+                    Violet & $14.0^\circ$ \\
+                    Blue & $15.0^\circ$ \\
+                    Green & $17.0^\circ$ \\
+                    Yellow 1 & $19.0^\circ$ \\
+                    Yellow 2 & $20.2^\circ$ \\
+                \end{tabular}
+                \caption{Measured angles for different emission lines (First order).}
+            \end{table}
+
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{l|c}
+                     \textbf{Color} & \textbf{Measured Angle (°)}\\
+                     \hline
+                     Violet & $29^\circ$\\
+                     Blue & $31^\circ$\\
+                     Green & $36^\circ$\\
+                     Yellow 1& $41^\circ$\\
+                     Yellow 2& $43^\circ$\\
+                \end{tabular}
+                \caption{Measured angles for different emission lines (Second order).}
+                \label{tab:measured_angles_second}
+            \end{table}
+            
+        \subsubsection{Theoretical derivation wave lengths}
+        
+            Using the formula $\sin{\theta} = \frac{n\lambda}{d}$, under the assumption that the wavelength of violet is known.
+
+            \begin{equation}
+                \lambda_{violet} = 404.7\mu m
+            \end{equation}
+
+            %Table theoretical derived wave lengths First order
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{c|c}
+                     \textbf{Color} & \textbf{Wave length ($nm$)} \\
+                     \hline
+                     Violet &  404.7\\
+                     Blue &  432.2\\
+                     Green & 488.3\\
+                     Yellow 1 & 543.7\\
+                     Yellow 2 & 576.6\\
+                \end{tabular}
+                \caption{Wave lengths first order}
+                \label{tab:wavelengths}
+            \end{table}
+
+            %Table theoretical derived wave lengths Second order
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{c|c}
+                    \textbf{Color} & \textbf{Wave length ($nm$)} \\
+                    \hline
+                    Violet &  404.7\\
+                    Blue &  432.2\\
+                    Green & 488.3\\
+                    Yellow 1 & 543.7\\
+                    Yellow 2 & 576.6\\
+                \end{tabular}
+                \caption{Wave lengths second order}
+            \end{table}
+    \subsection{Resolution}
+        Using the Rayleigh criterion, the resolving power is given by.
+        
+        \begin{equation}
+            \mathcal{R} = \frac{\lambda}{\Delta \lambda}
+        \end{equation}
+        \begin{equation}
+            W = \frac{\mathcal{R} \cdot d }{m} = 0.457mm
+        \end{equation}
+        
+        Which is the minimum width of the grating to be able to distinguish 2 waves of length $\lambda_1 = 576.96nm$ and $\lambda_2 = 579.07nm$.
